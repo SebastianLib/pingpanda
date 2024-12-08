@@ -1,14 +1,15 @@
 import React from "react"
 import { MaxWidthWrapper } from "../../components/max-width-wrapper"
 import { Heading } from "../../components/heading"
-import { Check } from "lucide-react"
+import { Check, Star } from "lucide-react"
 import ShinyButton from "../../components/shiny-button"
 import MockDiscordUI from "@/components/mock-discord-ui"
 import { AnimatedList, AnimatedListItem } from "@/components/ui/animated-list"
 import DiscordMessage from "@/components/discord-message"
 import Image from "next/image"
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { Icons } from "@/components/icons"
 
 export default function page() {
   return (
@@ -245,14 +246,123 @@ export default function page() {
 
             {/* fourth bento grid element */}
             <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-white 
-              max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
+              <div
+                className="absolute inset-px rounded-lg bg-white 
+              max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"
+              />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[]"></div>
             </div>
           </div>
         </MaxWidthWrapper>
       </section>
-      <section></section>
+
+      <section className="relative py-24 sm:py-32 bg-white">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+          <div>
+            <h2 className="text-center text-base/7 font-semibold text-brand-600">
+              Real-World Experiences
+            </h2>
+            <Heading className="text-center">What our customers say?</Heading>
+          </div>
+
+          <div
+            className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none
+          lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x-2 divide-gray-200"
+          >
+            {/* first review */}
+            <div
+              className="flex flex-auto flex-col gap-4 bg-brand-25 p-6
+            sm:p-8 lg:p-16 rounded-t-[2rem] lg:rounded-tr-none lg:rounnded-l-[2rem]"
+            >
+              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+              </div>
+
+              <p
+                className="text-base sm:text-lg lg:text-lg/8 font-medium
+              tracking-tight text-brand-950 text-center lg:text-left text-pretty"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur exercitationem sapiente, accusantium eos
+                voluptatibus maxime necessitatibus aliquid atque numquam
+                eligendi?
+              </p>
+
+              <div className="flex flex-col justify-center lg:justify-start sm:flex-row
+              items-center sm:items-start gap-4 mt-2">
+                  <Image
+                  src="/user-2.png" 
+                  className="rounded-full object-cover"
+                  alt="Random user"
+                  width={48}
+                  height={48}
+                  />
+                  <div className="flex flex-col items-center sm:items-start">
+                    <p className="font-semibold flex items-center">
+                      John Doe
+                      <Icons.verificationBadge className="size-4 inline-block ml-1.5"/>
+                    </p>
+                    <p className="text-sm text-gray-600">@johndoe</p>
+                  </div>
+              </div>
+            </div>
+
+            {/*  second review */}
+            <div
+              className="flex flex-auto flex-col gap-4 bg-brand-25 p-6
+            sm:p-8 lg:p-16 rounded-b-[2rem] lg:rounded-bl-none lg:rounnded-r-[2rem]"
+            >
+              <div className="flex gap-0.5 mb-2 justify-center lg:justify-start">
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+                <Star className="size-5 text-brand-600 fill-brand-600" />
+              </div>
+
+              <p
+                className="text-base sm:text-lg lg:text-lg/8 font-medium
+              tracking-tight text-brand-950 text-center lg:text-left text-pretty"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur exercitationem sapiente, accusantium eos
+                voluptatibus maxime necessitatibus aliquid atque numquam
+                eligendi?
+              </p>
+
+              <div className="flex flex-col justify-center lg:justify-start sm:flex-row
+              items-center sm:items-start gap-4 mt-2">
+                  <Image
+                  src="/user-1.png" 
+                  className="rounded-full object-cover"
+                  alt="Random user"
+                  width={48}
+                  height={48}
+                  />
+                  <div className="flex flex-col items-center sm:items-start">
+                    <p className="font-semibold flex items-center">
+                      John Doe
+                      <Icons.verificationBadge className="size-4 inline-block ml-1.5"/>
+                    </p>
+                    <p className="text-sm text-gray-600">@johndoe</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <ShinyButton 
+        href="/sign-up"
+        className="relative z-10 h-14 w-full max-w-xs
+        test-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+        >
+        Start For Free Today
+        </ShinyButton>
+        </MaxWidthWrapper>
+
+      </section>
     </>
   )
 }
