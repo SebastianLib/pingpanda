@@ -348,7 +348,7 @@ export default function page() {
                       John Doe
                       <Icons.verificationBadge className="size-4 inline-block ml-1.5"/>
                     </p>
-                    <p className="text-sm text-gray-600">@johndoe</p>
+                    <p className="text-sm text-gray-600">@johndoeee</p>
                   </div>
               </div>
             </div>
