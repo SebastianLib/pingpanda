@@ -4,9 +4,10 @@ import Link from "next/link"
 import { SignOutButton } from "@clerk/nextjs"
 import { Button, buttonVariants } from "./ui/button"
 import { ArrowRight } from "lucide-react"
+import { currentUser } from "@clerk/nextjs/server"
 
-export default function Navbar() {
-  const user = false
+export default async function Navbar() {
+  const user = await currentUser();
 
   return (
     <nav
